@@ -9,8 +9,9 @@ def home(request):
         'faculties': faculties,
         'departments': departments,
     }
-    return render(request, 'agri/home.html', context=context)
+    return render(request, 'agri/testhome.html', context=context)
 
 
 def department(request, pk):
-    return render(request, 'agri/department.html', {'pk':pk})
+    department = Department.objects.get(pk=pk)
+    return render(request, 'agri/department.html', {'department':department})
