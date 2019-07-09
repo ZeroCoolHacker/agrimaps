@@ -1,0 +1,23 @@
+{% extends 'agri/base.html' %}
+
+
+
+
+{% block content %}
+    
+
+    
+    {% for faculty in faculties %}
+        <strong>{{faculty}}</strong> <br>
+        <i style="color: aqua">
+        {% for dpt in faculty.department_set.all %}
+            {{ dpt }}
+        {% endfor %}
+        </i>
+            
+    {% endfor %}
+
+
+        
+{% endblock content %}
+    

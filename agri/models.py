@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.urls import reverse
 # Create your models here.
 class Faculty(models.Model):
     """Model definition for Faculty."""
@@ -37,6 +37,11 @@ class Department(models.Model):
         verbose_name = 'Department'
         verbose_name_plural = 'Departments'
 
+
+    def get_absolute_url(self):
+        return reverse('department', kwargs={'pk': self.pk})
+
+    
     def __str__(self):
         """Unicode representation of Department."""
         return self.name
