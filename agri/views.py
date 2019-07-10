@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Faculty, Department
+from .models import Faculty, Department, vips
 
 # Create your views here.
 def home(request):
@@ -15,3 +15,8 @@ def home(request):
 def department(request, pk):
     department = Department.objects.get(pk=pk)
     return render(request, 'agri/department.html', {'department':department})
+
+
+def info(request):
+    vip = vips.objects.all()
+    return render(request, 'agri/info.html', {'vips':vip})

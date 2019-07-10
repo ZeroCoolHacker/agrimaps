@@ -46,3 +46,20 @@ class Department(models.Model):
         """Unicode representation of Department."""
         return self.name
 
+
+
+class vips(models.Model):
+    """Model definition for vips."""
+
+    name = models.CharField(max_length=50)
+    position = models.CharField(max_length=50)
+    image = models.ImageField(upload_to='vips', null=True)
+    class Meta:
+        """Meta definition for vips."""
+
+        verbose_name = 'vips'
+        verbose_name_plural = 'vipss'
+
+    def __str__(self):
+        """Unicode representation of vips."""
+        return self.name
